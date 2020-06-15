@@ -1,0 +1,1085 @@
+
+/*-------------------------------- Base style  for min width 390px ----------------------------------*/
+
+html{
+	overflow-x: hidden;		/* to fix a bug related to overflow porperty on edge and mobile */
+}
+body{
+	position: fixed;  /* to fix a bug related to overflow porperty on edge and mobile */
+	overflow-x: hidden; 
+	font-size: 20px;
+	height: 100%;
+	line-height: 1.5;
+	font-family: 'Raleway', sans-serif;
+	background-color:rgb(70,70,70);  
+}
+
+h1, h2{
+	color: silver;
+}
+
+h1{
+	font-size: 1.8em;
+}
+
+h2{
+	font-size: 1.3em;
+}
+
+li{
+	list-style: none;
+}
+
+a{
+	color: rgb(255,0,68);
+	text-decoration: none;
+}
+
+:focus{
+	outline: none;
+}
+
+/*-------------------------------- End of Base style ----------------------------------*/
+
+
+/*-------------------------------- navigation ----------------------------------*/
+/* Navigation panel */
+
+.navigation-panel{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-image: linear-gradient(to right, silver 100%, transparent), url(../images/myCode.png);  /* photo by Dimitri Devoille */
+}
+	
+/* menu button */
+.menu{
+	position: relative;
+    cursor: pointer;
+    width: 100px;
+	height: 80px;
+	z-index: 10;
+    background-color: rgb(255,0,68);
+	border-bottom-right-radius: 100%;
+	border-right: 5px solid rgb(50,50,50);
+	border-bottom: 5px solid rgb(50,50,50);
+}
+
+.hamburger, .cross{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -15px;
+    margin-left: -12px;
+	transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+	color: #000;
+}
+  
+.hamburger{
+    transform-origin: -100px -100px;
+}
+
+.cross{
+    transform: rotate(20deg);
+    transform-origin: -100px -160px;
+}
+
+.menu-items{
+	position: absolute;
+    top: 200px;
+    left: 30px;
+}
+
+.navFixed, .menuFixed{
+	position: fixed !important;  /* prevent scrolling when open*/
+}
+
+.icon{
+	display: inline-block;
+	margin-right: 0.5em;
+}
+
+/* list items initial position */
+
+.menu-items li{
+	transform: translateX(-400px);
+    transition: transform 0.7s 0s cubic-bezier(1, 0.005, 0.24, 1);
+}
+
+.menu-items li:nth-child(2) {
+    margin-left: 35px;
+}
+
+.menu-items li:nth-child(3) {
+    margin-left: 75px;									
+ }
+
+.menu-items li:nth-child(4) {
+    margin-left: 115px;									
+}
+
+.menu-items li:nth-child(5) {
+	margin-left: 150px;									
+	margin-bottom: 20px;
+}
+
+.menu-items a{
+	display: block;
+    text-transform: uppercase;
+	color: #000;
+	padding: 1em 0; 
+	font-weight: bold;
+	font-size: 0.7em;
+	margin-top: 30px;
+}
+
+  /*  opening menu animation */
+ 
+.hamburgerRotate {
+    transform: rotate(-25deg);
+}
+
+.crossRotate {
+    transform: rotate(0);
+}
+
+  /* list items animation */
+.toggleNav .menu-items li{
+    transform: translateX(0);
+    transition: transform 0.35s 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toggleNav .menu-items li:nth-child(2){
+    transition-delay: 0.47s;
+}
+
+.toggleNav .menu-items li:nth-child(3){
+    transition-delay: 0.48s;
+}
+
+.toggleNav .menu-items li:nth-child(4){
+    transition-delay: 0.49s;
+}
+
+.toggleNav .menu-items li:nth-child(5){
+    transition-delay: 0.50s;
+}
+  
+
+
+/*------------------------------- End of navigation ----------------------------------*/
+
+/*-------------------------------- Home page content ----------------------------------*/
+
+
+ /*---------------------------------- Header -----------------------------------*/
+
+
+header{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 8vh;
+	background-color: rgb(152,25,59);
+}
+
+/* Logo */
+
+.logo a{
+	display: block;
+	color: silver;
+	font-family: 'Sedgwick Ave Display', cursive;
+	font-size: 2em;
+	padding: 0.1em 1em 0 1em;
+}
+
+#workBtn, .logo-span, #name, #footer-span{
+	color: #ff0044;
+}
+
+/*------------------------------ End of header ---------------------------------*/
+
+/*------------------------------- content panel -----------------------------------*/
+
+.content{
+	width: 100vw;
+	min-height: 100%;
+	background-color: rgb(50,50,50);
+	color: silver;
+	position: absolute;	 /* position content section over the navigation panel*/
+	top: 0;
+	left: 0;
+	z-index: 1;
+	transform-origin: top left;
+	transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+}
+
+
+.togglePanel{
+	transform: rotate(-30deg);
+	position: fixed !important;  /* prevent scrolling when open*/
+}
+
+section{
+	min-height: 80vh;
+	padding: 2em;
+	background-color: rgb(50,50,50);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+/*------------------------------- End of content panel -----------------------------------*/
+
+/*------------------------------- index.html -----------------------------------*/
+
+#home-content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-width: 80%;
+	min-height: 30vh;
+	background-color: transparent;
+	z-index: 1;           /* to overlap decoration */
+}
+
+#home-content h1{
+	margin-bottom: 0.5em;
+	letter-spacing: 0.07em;
+}
+
+#home-content h2{
+	margin-bottom: 1.2em;
+	font-size: 1em; 
+}
+
+.fade{
+	opacity :0;
+  }
+
+#workBtn{
+	color: rgb(255,0,68)
+}
+
+.square-large{
+	width: 200px;
+	height: 200px;
+	border: 5px solid rgb(70,70,70);
+	background-color: transparent;
+	transform: rotate(45deg);
+	position: absolute;
+	bottom: 20px;
+	right: -100px;
+}
+
+.square-small{
+	width: 75px;
+	height: 75px;
+	border: 5px solid rgb(152,25,59);
+	background-color: transparent;
+	transform: rotate(45deg);
+	position: absolute;
+	bottom: 80px;
+	right: 80px;
+	
+	
+}
+
+.square-medium{
+	width: 120px;
+	height: 120px;
+	border: 5px solid rgb(100, 100, 100);
+	background-color: transparent;
+	transform: rotate(45deg);
+	position: absolute;
+	bottom: 10px;
+	right: 8px;
+	
+}
+
+
+/*------------------------------- End of index.html -----------------------------------*/
+
+/*----------------------------------- about.html --------------------------------------*/
+
+#about-content, #personal{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#about-p{
+	margin: 2em 0 1em 0;
+	text-align: center;
+}
+
+#to-contact{
+	color: rgb(255,0,68);
+	text-align: left;
+}
+
+/* social */
+#facts, #links{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#links{
+	min-width: 100%;
+}
+
+#social{
+	display: flex;
+	justify-content: space-around;
+	width: 50%;
+}
+
+#github, #linkedin{
+	color: silver;
+	font-size: 2em;
+	transition: all 0.2s ease-in-out;
+}
+
+/* CV */
+
+#cv{
+	color: rgb(255,0,68);
+	display: block;
+	padding: 0.5em 2em;
+	margin: 1em 0 2em 0;
+	text-align: center;
+	background-color: silver;
+	border-radius: 5px;
+	transition: all 0.2s ease-in-out;
+}
+
+/* personal info */
+
+#personal{
+	z-index: 1;
+}
+
+#facts{
+	padding: 1em 1em 1.5em 1em;
+	font-size: 0.8em;
+	background: linear-gradient(rgba(255,0,68,.8) 10%, rgba(0,0,0,.7)), url(../images/guitar.png) no-repeat;  /* photo by unsplash.com */
+	background-size: cover;
+}
+
+#about-image{
+	width: 100%;
+	min-height: 30vh;
+	background: url(../images/dimitri.png) no-repeat;  /* Photo by william saint-martin*/
+	background-size: cover;
+}
+
+/*------------------------------------- End of about.html ---------------------------------------*/
+
+/*------------------------------------- portfolio.html ---------------------------------------*/
+
+/* image */
+#wireframe{
+	width: 80%;
+	height: auto;
+	margin-top: 2em;
+}
+
+#wireframe img{
+	width: 100%;
+}
+
+/* content */
+
+#portfolio-p{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	z-index: 1;									
+}
+
+#portfolio-content h2{
+	padding: 1em 0;
+}
+
+#portfolio-content h2:first-child{
+	padding-top: 1.5em;
+}
+
+#portfolio-content p{
+	text-align: center;
+	padding-bottom: 1.5em;
+	border-bottom: 2px solid rgb(152,25,59);
+}
+
+#portfolio-content p:last-child{
+	padding-bottom: 1em;
+	border-bottom: none;
+}
+
+#portfolio-content a{
+	color: rgb(255,0,68);
+	display: flex;
+	justify-content: center;
+	margin-top: 1em;
+	width: 100%;
+	padding: 0.5em;
+	background-color: rgb(70,70,70);
+	border-radius: 5px;
+	transition: all 0.2s ease-in-out;
+	z-index: 1;
+}
+
+
+/*------------------------------------- End of portfolio.html ---------------------------------------*/
+
+
+/*------------------------------------- projects.html ---------------------------------------*/
+
+#projects-section h1{
+	margin-bottom: 1em;
+}
+
+/* images */
+
+.desktop{
+	width: 80%;
+	height: auto;
+	margin-top: 2em;
+}
+
+.desktop img{
+	width: 100%;
+	border: 3px solid rgb(70,70,70);
+}
+
+.mobile{
+	display: none;
+}
+
+/* box content */
+
+
+.description, .projects-content, .projects-p{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.description{
+	z-index: 1;
+}
+
+.projects-p p{
+	text-align: center;
+	padding: 2em 0; 
+}
+
+.projects-button{
+	width: 80%;
+	display: flex;    /* add fex for IE 11 */
+	justify-content: center;
+	padding: 0.5em 1em;
+	background-color: rgb(70,70,70);
+	border-radius: 5px;
+	transition: all 0.2s ease-in-out;
+}
+
+#line{
+	width: 60%;
+	height: 2px;
+	background-color: rgb(152,25,59);
+	margin: 2.5em 0 2em 0;
+}
+
+/*------------------------------------- End of projects.html ---------------------------------------*/
+
+/*------------------------------------- blogs.html ---------------------------------------*/
+
+#blog-section h1, #blog-section h2{
+	margin-bottom: 1em;
+	min-width: 100%;
+	text-align: center;
+}
+
+#blog-section h2{
+	font-size: 1.2em;
+}
+
+.blog-box{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(70,70,70);
+	padding: 1em 0;
+	margin-bottom: 1.5em;
+	border-radius: 5px;
+	z-index: 1;
+}
+
+/* images */
+
+.blog-image{
+	display: flex;
+	justify-content: center;
+	width: 80%;
+	height: auto;
+}
+
+.blog-image img{
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	margin-bottom: 1em;
+}
+
+/* content */
+
+.blog-description, .blog-box a{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.blog-box p{
+	text-align: center;
+	padding: 0 1em;
+	margin: 1em 0;
+	font-size: 0.8em;
+}
+
+.blog-box a{
+	width: 70%;
+	padding: 0.5em 1em;
+	background-color: rgb(50,50,50);
+	border-radius: 5px;
+	transition: all 0.2s ease-in-out;
+}
+
+/*------------------------------------- End of blogs.html ---------------------------------------*/
+
+/*------------------------------------- contact.html ---------------------------------------*/
+form{
+	width: 100%;
+	background-color: rgb(70,70,70);
+	border-radius: 5px;
+	z-index: 1;  
+}
+input, textarea{
+	font-size: 0.8em;
+}
+
+input[type=text], input[type=email], textarea{
+	background-color: rgb(50,50,50);
+	color: #fff;
+	border: 1px solid rgb(255,0,68);
+	width: 90%;
+	padding: 0.5em;
+	display: block;
+	margin: 1em auto;
+	border-radius: 3px;
+}
+
+textarea{
+	resize: none;
+	height: 20vh;
+}
+
+input::placeholder, textarea::placeholder{
+	font-family: 'Raleway', sans-serif;
+	color: rgb(255,0,68);
+}
+
+input[type=submit]{
+	display: block;
+	border: none;
+	color: rgb(50,50,50);
+	background-color: rgb(255,0,68);
+	width: 80%;
+	margin: 0 auto 1em auto;
+	padding: 0.5em;
+	border-radius: 3px;
+	transition: all 0.2s ease-in-out;
+	-webkit-appearance: none;    /* apply style for iOs device  */
+}
+
+/*---------------------------------End of contact page ---------------------------------------*/
+
+/*--------------------------------------- Footer ---------------------------------------------*/
+
+
+
+footer{
+	height: 7vh;
+	width: 100vw;
+	background-color: #000;
+	border-top: 5px solid #ff0044;
+	color: silver;
+	text-align: center;
+	line-height: 7vh;
+	position: absolute;
+	top: 100%;
+	z-index: 1;
+}
+
+.year{
+	color: silver;
+}
+
+/*--------------------------------------- End of Footer ---------------------------------------------*/
+
+/*--------------------------------- buttons focus/hover/active style -------------------------------------*/
+
+
+/* navigation */
+
+.menu-items a:focus, .menu-items a:hover, .menu-items .active{
+	color: rgb(255,0,68);
+}
+
+/* logo */
+.logo a:hover, .logo a:focus{
+	background-color: rgb(50,50,50);
+	border-radius: 10px;
+}
+
+/* buttons and links */
+
+.menu:hover > .hamburger, 
+.menu:hover > .cross, 
+.hamburger:focus, 
+.cross:focus, 
+#workBtn a:hover, 
+#workBtn a:focus,
+#to-contact:hover, 
+#to-contact:focus, 
+#github:hover, 
+#linkedin:hover, 
+#github:focus, 
+#linkedin:focus,  
+#portfolio-content a:hover, 
+#portfolio-content a:focus, 
+.projects-button:hover, 
+.projects-button:focus, 
+.blog-box a:hover, 
+.blog-box a:focus, 
+input[type=submit]:hover, 
+input[type=submit]:focus
+{
+	color: #fff;
+}
+
+/* cv button */
+#cv:hover, #cv:focus{
+	background-color: #fff;
+}
+
+/* active state */
+
+#portfolio-content a:active, 
+.projects-button:active, 
+.blog-box a:active{
+	background-color: rgb(100, 100, 100)
+}
+
+/* form button */
+input[type=submit]:active{
+	color: #fff;
+	background-color: rgb(50,50,50);
+}
+
+input:focus, textarea:focus{
+	border: 1px solid silver;
+}
+
+/*----------------------------- End of buttons focus/hover style ------------------------------------*/
+
+/*------------------------------------------Media queries------------------------------------------*/
+
+@media only screen and ( min-width: 480px){
+
+	h1{
+		font-size: 2em;
+	}
+
+	/* index.html */
+
+	#home-content h1{
+		font-size: 2.5em;
+		
+	}
+	
+	#home-content h2, #workBtn{	
+		font-size: 1.2em; 
+	}
+
+	/*blogs.html*/
+	
+	.blog-box{
+		padding: 2em 0;
+	}
+
+} 
+
+@media only screen and ( min-width: 768px){
+
+	/* index.html*/
+
+	#home-content{
+		text-align: start;
+	}
+
+	#home-content h1{
+		margin-bottom: 0;
+		font-size: 3em
+	}
+
+	#home-content h2{
+		margin-bottom: 0.3em;
+		font-size: 2em;
+	}
+
+	#workBtn{
+		font-size: 2em;
+	}
+
+	/*about.html*/
+
+	#about-p{
+		margin-bottom: 4em;
+		padding-top: 1em;
+	}
+
+	#links{
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+
+	#social{
+		max-width: 30%;
+		padding-bottom: 1em;
+	}
+
+	#personal{
+		flex-wrap: nowrap;
+		width: 80%;
+		margin-top: 2em;
+	}
+
+	#facts{
+		max-width: 50%;
+	}
+
+	#about-image{
+		max-width: 50%;
+	}
+
+
+	/* portfolio.html */
+	
+	
+	#portfolio-content h1, #contact-section h1{
+		min-width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	#portfolio-content a{
+		width: 60%;
+	}
+
+	/* projects.html */
+
+	.projects-p p{
+		padding: 2em;
+	}
+
+	/*blogs.html*/
+	
+	.blog-box{
+		width: 60%;
+		margin-bottom: 0;
+		margin-top: 2em;
+	}
+	
+	/* contact.html */
+
+	input[type=submit]{
+		width: 50%;
+	}
+} 
+
+@media only screen and ( min-width: 1200px){
+
+	.navigation-panel{
+		background-image: linear-gradient(to right, silver 20%, transparent), url(../images/myCode.png);  /* Photo by Dimitri Devoille */
+	}
+
+	/* about.html */
+
+	#about-section h1{
+		width: 100%;
+		text-align: center;
+	}
+
+	#about-content{
+		justify-content: space-around;
+		margin-top: 1em;
+	}
+
+	#about-col{
+		max-width: 50%;
+		justify-content: start;
+	}
+
+
+	#links{
+		align-items: center;
+		justify-content: start;
+		max-width: 40%;		
+	}
+
+	#social{
+		font-size: 1.45em;
+		padding: 0;
+		max-width: 30%;
+		margin-right: 1em;
+		margin-top: 0.1em;
+	}
+
+	#cv{
+		margin: 0;
+	}
+
+	#personal{
+		flex-wrap: wrap;
+		max-width: 30%;
+	}
+
+	#facts{
+		position: relative;
+		right: 50%;
+		top: -10%;
+		padding: 1.5em;
+		max-width: 100%;
+		order: 2;
+		box-shadow: 3px -3px 5px rgb(30,30,30);
+	}
+
+	#about-image{
+		max-width: 100%;
+		min-height: 40vh;
+		order: 1;
+		
+	}
+	
+
+	/* potfolio.html */
+
+	#portfolio-content{
+		justify-content: space-around;
+	}
+
+	#wireframe{
+		width: 40%;
+		margin: 2em 0;
+	}
+
+	#wireframe img{
+		box-shadow: 3px -3px 5px rgb(100,100,100);
+	}
+
+	#portfolio-p{
+		max-width: 40%;									
+	}
+
+	#portfolio-content a{
+		width: 40%;
+		margin: 2em 0 1em 0;
+	}
+
+	/* project.html */
+
+	.description h2{
+		min-width: 100%;
+		padding-left: 10%;
+	}
+
+	.projects-p{
+		max-width: 40%;
+		padding-top: 2em;
+	}
+
+	.projects-button{
+		width: 70%;
+	}
+
+	.projects-content{
+		position: relative;   /* to position mobile image using absolute-position */
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
+		margin-bottom: 3em;
+	}
+
+
+	.desktop{
+		width: 40%;
+	}
+
+	.desktop img{
+		border: none;
+		box-shadow: 3px -3px 5px rgb(80,80,80);
+	}
+
+	.mobile{
+		display: block;
+		width: 10%;
+		height: auto;
+		box-shadow: 3px -3px 5px rgb(80,80,80);
+		position: absolute;
+		top: 35%;
+		left: 40%;
+		z-index: 1;
+	}
+
+	#line{
+		margin: 3em 0 3.5em 0;
+	}
+
+	/* blogs.html */
+
+	
+	.blog-box{
+		width: 80%;
+		padding: 0;
+		margin-bottom: 2em;
+	}
+	
+	.blog-image{
+		order: 2;
+		max-width: 30%;
+		display: flex;
+		align-items: center;
+		margin-top: 1em;
+	}
+
+	.blog-description{
+		order: 1;
+		max-width: 55%;
+		margin-right: 3em;
+	}
+
+	.blog-description h3{
+		display: flex;
+		justify-content: center;
+		min-width: 100%;     /* to avoid h3 to wrap for "ultrawide" screen */
+	}
+
+
+	/* contact.html */
+	
+	form{
+		max-width: 800px;
+		padding-top: 1.5em;
+	}
+
+}
+
+
+@media only screen and (min-width: 1300px){
+	
+	#facts{         
+		right: 60%;
+		top: -20%;
+	}
+
+}
+
+
+@media only screen and (max-height: 615px){   /* for smaller screen (height) */
+	
+	.menu-items{
+		left: 30px;
+		top: 200px;
+		font-size: 0.9em;
+	}
+
+	.menu-items li:nth-child(2) {
+		margin-left: 30px;
+	}
+	
+	.menu-items li:nth-child(3) {
+		margin-left: 60px;									
+	 }
+	
+	.menu-items li:nth-child(4) {
+		margin-left: 90px;									
+	}
+	
+	.menu-items li:nth-child(5) {
+		margin-left: 120px;									
+	}
+
+	.menu-items a{
+		margin-top: 20px;
+	  }
+}
+
+@media only screen and (max-height: 420px){   /* mobile lanscape mode */
+	
+	.icon{
+		display: none;
+	}
+
+	header{
+		height: 15vh;
+	}
+	
+	/* Logo */
+	
+	.logo a{
+		padding: 0.1em 1em 0 1em;
+	}
+
+	/* about.html */
+
+	#about-image{
+		min-height: 50vh;
+	}
+
+	/* navigation */
+
+	.menu-items{
+		left: 10px;
+		top: 130px;
+		font-size: 0.9em;
+	}
+
+	.menu-items li:nth-child(2) {
+		margin-left: 15px;
+	}
+	
+	.menu-items li:nth-child(3) {
+		margin-left: 30px;									
+	 }
+	
+	.menu-items li:nth-child(4) {
+		margin-left: 45px;									
+	}
+	
+	.menu-items li:nth-child(5) {
+		margin-left: 60px;									
+	}
+
+	.menu-items a{
+		margin-top: 0px;
+	  }
+
+	footer{
+		height: 15vh;
+		line-height: 15vh;
+	}
+}
